@@ -34,6 +34,7 @@ namespace Controlador
         {
             return objcd_RangoHorario.Registrar(idRH, idU, out mensaje);
         }
+
         public bool ActualizarCupo(int idRangoHorario, int nuevoCupo, out string mensaje)
         {
             return objcd_RangoHorario.ActualizarCupo(idRangoHorario, nuevoCupo, out mensaje);
@@ -42,6 +43,10 @@ namespace Controlador
         public bool EliminarRelacion(int idRangoHorario, int idUsuario, out string mensaje)
         {
             return objcd_RangoHorario.EliminarRelacion(idRangoHorario, idUsuario, out mensaje);
+        }
+        public bool EliminarTurnosAsociados(int idRangoHorario, int idUsuario, out string mensaje)
+        {
+            return objcd_RangoHorario.EliminarTurnosAsociados(idRangoHorario, idUsuario, out mensaje);
         }
         public void SetActivo(int IdRangoHorario, Boolean Activo)
         {

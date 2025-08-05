@@ -244,7 +244,14 @@ namespace DAO
                 }
                 catch (Exception ex)
                 {
-                    mensaje = ex.Message;
+                    if (ex.Message.Contains("duplicate key"))
+                    {
+                        mensaje = "Ya existe una asignación del entrenador a ese rango horario.";
+                    }
+                    else
+                    {
+                        mensaje = ex.Message;
+                    }
                     resultado = false;
                 }
             }
@@ -276,7 +283,7 @@ namespace DAO
             }
             return resultado;
         }
-
+        /*
         public bool EliminarRelacion(int idRangoHorario, int idUsuario, out string mensaje)
         {
             bool resultado = false;
@@ -301,6 +308,81 @@ namespace DAO
             }
             return resultado;
         }
+        */
+        public bool EliminarRelacion(int idRangoHorario, int idUsuario, out string mensaje)
+        {
+            bool resultado = false;
+            mensaje = string.Empty;
+
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    SqlCommand checkCmd = new SqlCommand(@"
+                        SELECT COUNT(*) 
+                        FROM Turno 
+                        WHERE IdRangoHorario = @IdRangoHorario AND IdUsuario = @IdUsuario", conexion);
+
+                    checkCmd.Parameters.AddWithValue("@IdRangoHorario", idRangoHorario);
+                    checkCmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                    conexion.Open();
+
+                    int cantidadTurnos = (int)checkCmd.ExecuteScalar();
+
+                    if (cantidadTurnos > 0)
+                    {
+                        mensaje = "No se puede eliminar esta asignación porque existen turnos asociados al entrenador en este rango horario.";
+                        return false;
+                    }
+
+                    SqlCommand cmd = new SqlCommand(@"
+                        DELETE FROM RangoHorario_Usuario 
+                        WHERE IdRangoHorario = @IdRangoHorario AND IdUsuario = @IdUsuario", conexion);
+
+                    cmd.Parameters.AddWithValue("@IdRangoHorario", idRangoHorario);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                    resultado = cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    mensaje = ex.Message;
+                    resultado = false;
+                }
+            }
+
+            return resultado;
+        }
+
+        public bool EliminarTurnosAsociados(int idRangoHorario, int idUsuario, out string mensaje)
+        {
+            bool resultado = false;
+            mensaje = string.Empty;
+
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Turno WHERE IdRangoHorario = @IdRangoHorario AND IdUsuario = @IdUsuario", conexion);
+                    cmd.Parameters.AddWithValue("@IdRangoHorario", idRangoHorario);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                    conexion.Open();
+                    resultado = cmd.ExecuteNonQuery() >= 0; // >= 0 para permitir que funcione aunque no haya turnos
+
+                }
+                catch (Exception ex)
+                {
+                    mensaje = ex.Message;
+                    resultado = false;
+                }
+            }
+
+            return resultado;
+        }
+
+
         public void SetActivo(int IdRangoHorario, Boolean Activo)
         {
             using (SqlConnection conexion = new SqlConnection(Conexion.cadena))

@@ -384,6 +384,34 @@ namespace Vista
                         else
                         {
                             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // DialogResult eliminar = MessageBox.Show("¿Desea eliminar los turnos y la asignación del entrenador?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult eliminar = MessageBox.Show("La asignación tiene turnos asociados. ¿Desea eliminar también los turnos y luego la asignación?",
+                                                            "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (eliminar == DialogResult.Yes)
+                            {
+                                // 1. Eliminar los turnos asociados
+                                bool turnosEliminados = new ControladorGymRangoHorario().EliminarTurnosAsociados(idRangoHorario, idUsuario, out string mensajeTurnos);
+
+                                if (turnosEliminados)
+                                {
+                                    // 2. Reintentar eliminar la relación
+                                    bool relacionEliminada = new ControladorGymRangoHorario().EliminarRelacion(idRangoHorario, idUsuario, out string mensajeRelacion);
+
+                                    if (relacionEliminada)
+                                    {
+                                        dgvEntrenadores.Rows.RemoveAt(index);
+                                        MessageBox.Show("Turnos y asignación eliminados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Los turnos fueron eliminados, pero no se pudo eliminar la asignación: " + mensajeRelacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudieron eliminar los turnos: " + mensajeTurnos, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
                         }
                     }
                 }

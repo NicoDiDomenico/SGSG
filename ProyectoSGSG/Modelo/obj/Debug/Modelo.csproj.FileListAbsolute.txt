@@ -16,3 +16,9 @@ C:\GitHubProyectos\UAI-2024\MindFit Supervisor\Mi código\ProyectoSGSG\Modelo\ob
 C:\GitHubProyectos\UAI-2024\MindFit Supervisor\Mi código\ProyectoSGSG\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\GitHubProyectos\UAI-2024\MindFit Supervisor\Mi código\ProyectoSGSG\Modelo\obj\Debug\Modelo.dll
 C:\GitHubProyectos\UAI-2024\MindFit Supervisor\Mi código\ProyectoSGSG\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\bin\Debug\Modelo.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\obj\Debug\Modelo.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Modelo\obj\Debug\Modelo.pdb

@@ -119,14 +119,14 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(277, 20);
-            this.txtClave.TabIndex = 9;
+            this.txtClave.TabIndex = 2;
             // 
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Location = new System.Drawing.Point(265, 223);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(277, 20);
-            this.txtNombreUsuario.TabIndex = 8;
+            this.txtNombreUsuario.TabIndex = 1;
             // 
             // label5
             // 
@@ -145,7 +145,7 @@
             this.txtRepetir.Name = "txtRepetir";
             this.txtRepetir.PasswordChar = '*';
             this.txtRepetir.Size = new System.Drawing.Size(277, 20);
-            this.txtRepetir.TabIndex = 13;
+            this.txtRepetir.TabIndex = 3;
             // 
             // label6
             // 
@@ -163,7 +163,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(265, 163);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(277, 20);
-            this.txtCorreo.TabIndex = 15;
+            this.txtCorreo.TabIndex = 0;
             this.txtCorreo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCorreo_KeyDown);
             // 
             // btnVolver
@@ -194,7 +194,7 @@
             this.gbCorreo.Controls.Add(this.label7);
             this.gbCorreo.Controls.Add(this.btnConfirmarCodigo);
             this.gbCorreo.Controls.Add(this.txtCodigoVerificacion);
-            this.gbCorreo.Location = new System.Drawing.Point(113, 214);
+            this.gbCorreo.Location = new System.Drawing.Point(113, 219);
             this.gbCorreo.Name = "gbCorreo";
             this.gbCorreo.Size = new System.Drawing.Size(494, 226);
             this.gbCorreo.TabIndex = 18;

@@ -42,3 +42,14 @@ C:\Users\Nicol\OneDrive\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controla
 C:\Users\Nicol\OneDrive\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controla.6B62700F.Up2Date
 C:\Users\Nicol\OneDrive\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.dll
 C:\Users\Nicol\OneDrive\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\Controlador.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\Controlador.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\DAO.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\Modelo.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\DAO.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\bin\Debug\Modelo.pdb
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controla.6B62700F.Up2Date
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.dll
+C:\Users\Nicol\Desktop\SGSG\ProyectoSGSG\Controlador\obj\Debug\Controlador.pdb
